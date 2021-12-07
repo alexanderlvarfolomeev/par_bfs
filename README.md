@@ -1,6 +1,6 @@
 # par_bfs
 
-Sequiential: 18565 milliseconds
+Sequential: 18565 milliseconds
 
 Parallel: 8722 milliseconds
 
