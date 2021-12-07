@@ -56,7 +56,7 @@ int main() {
         std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
         sum1 += std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
     }
-    std::cout << "Sequiential: " << sum1 / reps << " milliseconds" << std::endl;
+    std::cout << "Sequential: " << sum1 / reps << " milliseconds" << std::endl;
 
     uint64_t sum2 = 0;
     std::vector<std::atomic_int> vs2(graph_sz);
