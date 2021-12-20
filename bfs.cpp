@@ -87,10 +87,11 @@ void bfs_parallel(std::vector<std::atomic_int> &vertices, const std::vector<std:
     frontier.push_back(0);
     vertices[0] = 0;
     uint32_t depth = 1;
+    uint32_t mx_fr = vertices.size() / 2;
     while (!frontier.empty()) {
         if (frontier.size() < border) {
             std::vector<uint32_t> t_frontier;
-            t_frontier.reserve(frontier.size() * edges[frontier[0]].size());
+            t_frontier.reserve(std::min(mx_fr, frontier.size() * edges[frontier[0]].size()));
             for (int i : frontier) {
                 for (uint32_t nbr : edges[i]) {
                     if (vertices[nbr] == -1) {
